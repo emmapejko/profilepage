@@ -1,20 +1,55 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Profile from './app/components/Profile';
+import HomeScreen from './app/screens/HomeScreen';
+import NameScreen from './app/screens/NameScreen';
+import NumberScreen from './app/screens/NumberScreen';
+import EmailScreen from './app/screens/EmailScreen';
+import BioScreen from './app/screens/BioScreen';
+import ProfileImageScreen from './app/screens/ProfileImageScreen';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Profile />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{headerShown: false}}
+            initialParams={{image: '', name: 'Full Name', number: '(000) 000-0000', email: 'example@gmail.com', bio: 'tell us about yourself...'}}
+          />
+          <Stack.Screen
+            name="Name"
+            component={NameScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Number"
+            component={NumberScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Email"
+            component={EmailScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Bio"
+            component={BioScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="ProfileImage"
+            component={ProfileImageScreen}
+            options={{headerShown: false}}
+          />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-  },
-});
+export default App;
