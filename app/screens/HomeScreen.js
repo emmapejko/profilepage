@@ -15,7 +15,8 @@ const HomeScreen = ({ navigation, route }) => {
           style={styles.profileImage}
           source={ image ? { uri: image } : require('../assets/profilepic.png')}
         />
-        {/* <MaterialCommunityIcons name="pencil-circle-outline" size={24} color="#3471eb" /> */}
+        <MaterialCommunityIcons style={styles.icon} name="pencil-circle" size={34} color="white" />
+        <MaterialCommunityIcons style={styles.icon} name="pencil-circle-outline" size={34} color='#3471eb' />
         </Pressable>
       </View>
       <View style={styles.box}>
@@ -88,12 +89,18 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    position: 'relative'
   },
   profileImage: {
-    width: 160,
-    height: 160,
+    width: 170,
+    height: 170,
     borderRadius: 100
+  },
+  icon: {
+    position: 'absolute',
+    right: 7,
+    top: 7
   },
   header: {
     fontSize: 30,
