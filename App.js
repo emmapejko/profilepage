@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -20,7 +19,7 @@ const App = () => {
             name="Home"
             component={HomeScreen}
             options={{headerShown: false}}
-            initialParams={{image: '', name: 'Full Name', number: '(000) 000-0000', email: 'example@gmail.com', bio: 'tell us about yourself...'}}
+            initialParams={{image: '', name: 'Micah Smith', number: '(208) 206-5039', email: 'micahsmith@gmail.com', bio: 'Hi my name is Micah Smith...'}}
           />
           <Stack.Screen
             name="Name"

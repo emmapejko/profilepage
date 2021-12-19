@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation, route }) => {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View>
               <Text style={styles.label}>Name</Text>
-              <Text style={styles.text}>{name || 'Full Name'}</Text>
+              <Text style={styles.text}>{name}</Text>
             </View>
             <View style={{ justifyContent: 'center' }}>
               <Entypo name="chevron-thin-right" size={30} color="gray" />
@@ -35,7 +35,7 @@ const HomeScreen = ({ navigation, route }) => {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View>
               <Text style={styles.label}>Phone</Text>
-              <Text style={styles.text}>{number || '(000) 000-0000' }</Text>
+              <Text style={styles.text}>{number}</Text>
             </View>
             <View style={{ justifyContent: 'center' }}>
               <Entypo name="chevron-thin-right" size={30} color="gray" />
@@ -48,7 +48,7 @@ const HomeScreen = ({ navigation, route }) => {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View>
               <Text style={styles.label}>Email</Text>
-              <Text style={styles.text}>{email || 'example@gmail.com'}</Text>
+              <Text style={styles.text}>{email}</Text>
             </View>
             <View style={{ justifyContent: 'center' }}>
               <Entypo name="chevron-thin-right" size={30} color="gray" />
@@ -61,7 +61,7 @@ const HomeScreen = ({ navigation, route }) => {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View>
               <Text style={styles.label}>Tell us about yourself</Text>
-              <Text style={styles.text}>{bio || 'Tell us about yourself...'}</Text>
+              <Text style={styles.text}>{bio}</Text>
             </View>
             <View style={{ justifyContent: 'center' }}>
               <Entypo name="chevron-thin-right" size={30} color="gray" />
