@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Pressable, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const EmailScreen = ({ navigation, route }) => {
@@ -8,25 +8,31 @@ const EmailScreen = ({ navigation, route }) => {
   const [newEmail, setNewEmail] = useState(email);
 
   return (
-    <>
+    <ScrollView keyboardShouldPersistTaps="handled">
     <View style={styles.backButton}>
       <Pressable onPress={() => navigation.navigate('Home', { email: email, number : number, name: name, bio: bio, image: image })}>
         <Ionicons name="arrow-back" size={24} color="black" />
       </Pressable>
     </View>
     <View style={styles.container}>
-      <Text>What's your email address?</Text>
+      <Text style={styles.header}>What's your email address?</Text>
+      <View style={styles.input}>
+        <Text style={styles.label}>Your email address</Text>
         <TextInput
-          placeholder="Your email address"
           onChangeText={text => setNewEmail(text)}
           defaultValue={newEmail}
+          style={styles.emailInput}
+          keyboardType={'email-address'}
         />
-      <Button
-        title="Update"
+      </View>
+      <Pressable
         onPress={() => navigation.navigate('Home', { email: newEmail, number: number, name: name, bio: bio, image: image })}
-      />
+        style={styles.button}
+      >
+        <Text style={styles.update}>Update</Text>
+      </Pressable>
     </View>
-    </>
+    </ScrollView>
   )
 }
 
@@ -37,8 +43,43 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
+  },
+  header: {
+    alignSelf: "flex-start",
+    padding: 30,
+    fontSize: 25,
+  },
+  button: {
+    marginTop: '70%',
+    width: '80%',
+    height: 50,
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  update: {
+    color: 'white',
+    fontWeight: 'bold'
+  },
+  input: {
+    width: '80%',
+    height: 70,
+    borderStyle: 'solid',
+    borderColor: '#D3D3D3',
+    borderWidth: 1,
+    justifyContent: 'space-between'
+  },
+  label: {
+    paddingTop: 5,
+    paddingLeft: 5,
+    fontSize: 15,
+    color: '#8c8888'
+  },
+  emailInput: {
+    paddingBottom: 5,
+    paddingLeft: 5,
+    fontSize: 25,
   }
 })
 

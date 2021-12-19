@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable, ScrollView } from 'react-native';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const HomeScreen = ({ navigation, route }) => {
   const { image, name, number, email, bio } = route.params;
 
   return (
+    <ScrollView keyboardShouldPersistTaps="handled">
     <View style={styles.container}>
       <Text style={styles.header}>Edit Profile</Text>
       <View style={styles.profileImageView}>
@@ -70,6 +71,7 @@ const HomeScreen = ({ navigation, route }) => {
         </Pressable>
       </View>
     </View>
+    </ScrollView>
   )
 };
 
