@@ -1,6 +1,6 @@
 ### profile page project
 
-Profile page project built with React Native.
+Profile page project built with React Native and Expo.
 
 ### to start
 
